@@ -1,6 +1,10 @@
 import React from "react";
-import Table from "../components/Table";
-import SearchBar from "../components/SearchBar";
+import { Navbar } from "../components/Navbar";
+import { Stack } from "@mui/material";
+import { Sidebar } from "../components/Sidebar";
+import { Feed } from "../components/Feed";
+import { RightBar } from "../components/RightBar";
+
 
 class Home extends React.Component {
     constructor(props){
@@ -16,12 +20,14 @@ class Home extends React.Component {
 
     render (){
         return  (
-            <div className="Home">
-            <h1>Home</h1>
-            <p>This is an app for search a title in a list of songs. Have a nice experience!</p>            
-            <SearchBar searchResult={this.state} updateResult={this.updateResult} />
-            <Table songs={this.state.searchResult} />
-            </div>
+            <>
+            <Navbar></Navbar>
+            <Stack direction="row" spacing={3} justifyContent="space-between">
+                <Sidebar>Here goes a list: </Sidebar>
+                <Feed data={this.state.searchResult}/>
+                <RightBar />
+            </Stack>
+            </>
         )
     }
 }

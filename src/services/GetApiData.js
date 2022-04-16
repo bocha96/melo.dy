@@ -1,4 +1,4 @@
-import data from "../utils/songs.json"
+import data from "../store/songs.json"
 
 export default function getApiData (desiredValue) {
     const filteredSongs = data.songs.filter(
