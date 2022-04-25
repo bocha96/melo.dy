@@ -18,7 +18,7 @@ export const Navbar = () => {
               <IconButton color="inherit">
                 <EarbudsIcon />
               </IconButton>
-                  MyAPP
+                  melo.dy
               </Typography>
               <IconButton color="inherit">
               <EarbudsIcon sx={{display: {xs:"block", sm:"none"}}}/>

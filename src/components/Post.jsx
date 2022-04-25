@@ -16,7 +16,7 @@ export const Post = (props) => {
       <CardMedia
         component="img"
         height="120px"
-        image={song.img_url}
+        image="https://images.pexels.com/photos/11182884/pexels-photo-11182884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
         alt={song.title}
       />
       <CardContent>
