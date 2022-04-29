@@ -1,21 +1,24 @@
 import React from 'react';
-import { Box, Button, List, ListItem, ListItemIcon, Stack } from '@mui/material';
-import AccessibleForwardIcon from '@mui/icons-material/AccessibleForward';
+import { Box, Button, List, ListItem, ListItemIcon, Stack, Typography } from '@mui/material';
+import { Search } from '@mui/icons-material';
 
 export const Sidebar = (props) => {
   const history = props.history;
 
-  const handleClick = (index)=> props.moveTo(index);
+  const handleClick = (index) => props.moveTo(index);
 
   return (
-    <Box flex={2}>
+    <Box flex={2} sx={{ width: "280px", position: "fixed" }}>
+      <Typography margin="5% 12% 0%" variant="h6" color="GrayText">
+        Search history:
+      </Typography>
       <List>
-        <Stack justifyContent="stretch">
-          {history.map((item, index)=>(
-            <ListItem key={index}>
-              <Button onClick={()=>handleClick(history.indexOf(item))}>
+        <Stack>
+          {history.map((item, index) => (
+            <ListItem key={index} onClick={() => handleClick(history.indexOf(item))}>
+              <Button fullWidth style={{ justifyContent: "stretch" }}>
                 <ListItemIcon>
-                  <AccessibleForwardIcon />
+                  <Search />
                 </ListItemIcon>
                 {item.searchName}
               </Button>

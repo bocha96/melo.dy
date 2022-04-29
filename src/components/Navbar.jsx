@@ -12,21 +12,21 @@ const StyledToolbar = styled(Toolbar)({
 
 export const Navbar = () => {
   return (
-        <AppBar position="sticky" color="primary">
-            <StyledToolbar>
-              <Typography variant="h6" sx={{display: {xs:"none", sm:"block"}}}>
-              <IconButton color="inherit">
-                <EarbudsIcon />
-              </IconButton>
-                  melo.dy
-              </Typography>
-              <IconButton color="inherit">
-              <EarbudsIcon sx={{display: {xs:"block", sm:"none"}}}/>
-              </IconButton>
-              <Typography variant="a" component="h5">
-                LOGIN
-              </Typography>
-            </StyledToolbar>
-        </AppBar>
+    <AppBar position="sticky" color="primary">
+      <StyledToolbar>
+        <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
+          <IconButton color="inherit">
+            <EarbudsIcon />
+          </IconButton>
+          melo.dy
+        </Typography>
+        <IconButton color="inherit">
+          <EarbudsIcon sx={{ display: { xs: "block", sm: "none" } }} />
+        </IconButton>
+        <Typography variant="a" component="h5">
+          LOGIN
+        </Typography>
+      </StyledToolbar>
+    </AppBar>
   )
 }

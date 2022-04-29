@@ -6,39 +6,39 @@ import { Feed } from "../components/Feed";
 import { SearchForm } from "../components/SearchForm"
 
 class Home extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            searchHistory: [{searchName: "", songsList: []}],
+            searchHistory: [{ searchName: "", songsList: [] }],
             currentStep: 0
         };
     }
 
-    moveToStep = (index)=>{
+    moveToStep = (index) => {
         this.setState({
-            currentStep: index+1
+            currentStep: index + 1
         })
     }
 
-    saveSearch = (actualSearch, query) => { 
-        const history = this.state.searchHistory.slice(0, this.state.currentStep +1);
+    saveSearch = (actualSearch, query) => {
+        const history = this.state.searchHistory.slice(0, this.state.currentStep + 1);
         this.setState({
-            searchHistory: history.concat([{songsList: actualSearch, searchName: query}]),
+            searchHistory: history.concat([{ songsList: actualSearch, searchName: query }]),
             currentStep: history.length
         });
     }
 
-    render (){
+    render() {
         const history = this.state.searchHistory;
         const currentList = history[this.state.currentStep];
-        return  (
+        return (
             <>
-            <Navbar></Navbar>
-            <Stack direction="row" spacing={3} justifyContent="space-between">
-                <Sidebar history={history.slice(1)} moveTo={this.moveToStep}/>
-                <Feed posts={currentList.songsList} />
-                <SearchForm saveSearch={this.saveSearch} />
-            </Stack>
+                <Navbar></Navbar>
+                <Stack direction="row" spacing={3} justifyContent="space-between">
+                    <Sidebar history={history.slice(1).slice(-9)} moveTo={this.moveToStep} />
+                    <Feed posts={currentList.songsList} />
+                    <SearchForm saveSearch={this.saveSearch} />
+                </Stack>
             </>
         )
     }
