@@ -21,7 +21,7 @@ class Home extends React.Component {
     }
 
     saveSearch = (actualSearch, query) => {
-        const history = this.state.searchHistory.slice(0, this.state.currentStep + 1);
+        const history = this.state.searchHistory.slice(0, this.state.currentStep + 1).slice(-6);
         this.setState({
             searchHistory: history.concat([{ songsList: actualSearch, searchName: query }]),
             currentStep: history.length
@@ -35,7 +35,7 @@ class Home extends React.Component {
             <>
                 <Navbar></Navbar>
                 <Stack direction="row" spacing={3} justifyContent="space-between">
-                    <Sidebar history={history.slice(1).slice(-9)} moveTo={this.moveToStep} />
+                    <Sidebar history={history.slice(1)} moveTo={this.moveToStep} />
                     <Feed posts={currentList.songsList} />
                     <SearchForm saveSearch={this.saveSearch} />
                 </Stack>
