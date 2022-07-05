@@ -26,9 +26,7 @@ export const Sidebar = (props) => {
             onClick={() => {
               handleClick(history.indexOf(item));
             }}>
-            <Card
-              sx={{ padding: "8%", margin: "2%" }}
-            >
+            <Card sx={{ padding: "8%", margin: "2%" }}>
               {item.searchName}
             </Card>
           </Button>

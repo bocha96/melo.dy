@@ -39,8 +39,8 @@ export const Post = (props) => {
       <CardMedia
 
         component="img"
-        sx={{ ml: "auto", width: "50%", maxHeight: 225 }}
-        image="https://images.pexels.com/photos/11182884/pexels-photo-11182884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+        sx={{ ml: "auto", width: "50%", maxHeight: 250 }}
+        image="https://random.imagecdn.app/300/250"
         alt={song.title}
       />
     </Card>

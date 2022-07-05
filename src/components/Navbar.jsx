@@ -3,14 +3,19 @@ import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import EarbudsIcon from '@mui/icons-material/Earbuds';
-import { IconButton, styled } from '@mui/material'
+import { Button, IconButton, styled } from '@mui/material'
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
   justifyContent: "space-between",
 })
 
-export const Navbar = () => {
+export const Navbar = (props) => {
+  const { token, setToken } = props;
+  const logout = () => {
+    setToken("");
+    window.localStorage.removeItem("token")
+  }
   return (
     <AppBar position="sticky" color="primary">
       <StyledToolbar>
@@ -23,9 +28,13 @@ export const Navbar = () => {
         <IconButton color="inherit">
           <EarbudsIcon sx={{ display: { xs: "block", sm: "none" } }} />
         </IconButton>
-        <Typography variant="a" component="h5">
-          LOGIN
-        </Typography>
+        {
+          token ?
+            <Button onClick={logout} variant='text' color='inherit'>Logout</Button>
+            :
+            <Button onClick={logout} variant='text' color='inherit'>LogIn</Button>
+
+        }
       </StyledToolbar>
     </AppBar>
   )

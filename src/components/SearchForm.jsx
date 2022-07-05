@@ -1,7 +1,7 @@
 import { Box, Stack, TextField, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Button } from "@mui/material";
-import { search } from "./SearchFunc";
+import { search } from "../services/SearchFunc";
 import data from "../store/songs.json";
 
 

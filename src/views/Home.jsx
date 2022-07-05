@@ -1,9 +1,10 @@
 import React from "react";
-import { Navbar } from "../components/Navbar";
 import { Stack } from "@mui/material";
 import { Sidebar } from "../components/Sidebar";
 import { Feed } from "../components/Feed";
-import { SearchForm } from "../components/SearchForm"
+import { SearchForm } from "../components/SearchForm";
+
+
 
 class Home extends React.Component {
     constructor(props) {
@@ -31,15 +32,13 @@ class Home extends React.Component {
     render() {
         const history = this.state.searchHistory;
         const currentList = history[this.state.currentStep];
+
         return (
-            <>
-                <Navbar></Navbar>
-                <Stack direction="row" spacing={3} justifyContent="space-between">
-                    <Sidebar history={history.slice(1)} moveTo={this.moveToStep} />
-                    <Feed posts={currentList.songsList} />
-                    <SearchForm saveSearch={this.saveSearch} />
-                </Stack>
-            </>
+            <Stack direction="row" spacing={3} justifyContent="space-between">
+                <Sidebar history={history.slice(1)} moveTo={this.moveToStep} />
+                <Feed posts={currentList.songsList} />
+                <SearchForm saveSearch={this.saveSearch} />
+            </Stack>
         )
     }
 }

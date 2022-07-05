@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Home from './views/Home';
+import LogIn from './views/LogIn';
 
 
 
@@ -7,7 +7,7 @@ import Home from './views/Home';
 export default function App() {
   return (
     <>
-      <Home />
+      <LogIn />
     </>
   )
 }
